@@ -1,0 +1,60 @@
+<style>
+.dataTables_wrapper{width:980px;}
+label {
+    font-size: 13px;
+    padding: 0 40px 5px;
+}
+</style>
+<strong style="float:right"> <%= link_to "Add Customer", new_customer_path %> </strong>
+<strong>Import Customers</strong><hr>
+<table><%= form_tag import_customers_path, multipart: true do %>
+    <tr><td><%= file_field_tag :file %><br></td></tr>
+    <tr><td><%= submit_tag "Upload Customers", class: 'btn btn-danger' %></td></tr>
+<% end %></table>
+<hr>
+
+
+
+<h1>Listing customers</h1>
+
+<table class="table table-condensed table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Caf number</th>
+      <th>Account number</th>
+      <th>Mdn</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Middle name</th>
+      <th>Fh name</th>
+      <th>Customer type</th>
+      <th>Cust category</th>
+      <th>Contact number</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.caf_number %></td>
+        <td><%= customer.account_number %></td>
+        <td><%= customer.mdn %></td>
+        <td><%= customer.first_name %></td>
+        <td><%= customer.last_name %></td>
+        <td><%= customer.middle_name %></td>
+        <td><%= customer.fh_name %></td>
+        <td><%= customer.nationality %></td>
+        <td><%= customer.customer_type %></td>
+        <td><%= customer.cust_category %></td>
+        <td><%= customer.contact_number %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>

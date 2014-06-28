@@ -1,0 +1,342 @@
+<%= form_for(@customer) do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :caf_number %><br>
+    <%= f.number_field :caf_number %>
+  </div>
+  <div class="field">
+    <%= f.label :len %><br>
+    <%= f.number_field :len %>
+  </div>
+  <div class="field">
+    <%= f.label :old_caf_number %><br>
+    <%= f.number_field :old_caf_number %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_Account_number %><br>
+    <%= f.number_field :parent_Account_number %>
+  </div>
+  <div class="field">
+    <%= f.label :account_number %><br>
+    <%= f.number_field :account_number %>
+  </div>
+  <div class="field">
+    <%= f.label :mdn %><br>
+    <%= f.number_field :mdn %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_name %><br>
+    <%= f.text_field :middle_name %>
+  </div>
+  <div class="field">
+    <%= f.label :fh_name %><br>
+    <%= f.text_field :fh_name %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br>
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%#= f.text_field :gender %>
+    <%= f.select :gender, [['Male', 'Male'], ['Female', 'Female']], {:prompt => "Select"} %>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br>
+    <%= f.date_select :dob %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_type %><br>
+    <%= f.text_field :customer_type %>
+  </div>
+  <div class="field">
+    <%= f.label :cust_category %><br>
+    <%= f.text_field :cust_category %>
+  </div>
+  <div class="field">
+    <%= f.label :entity_name %><br>
+    <%= f.text_field :entity_name %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1 %><br>
+    <%= f.text_field :address_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2 %><br>
+    <%= f.text_field :address_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :landmark %><br>
+    <%= f.text_field :landmark %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :pincode %><br>
+    <%= f.text_field :pincode %>
+  </div>
+  <div class="field">
+    <%= f.label :local_address_1 %><br>
+    <%= f.text_field :local_address_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :local_address_2 %><br>
+    <%= f.text_field :local_address_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :local_city %><br>
+    <%= f.text_field :local_city %>
+  </div>
+  <div class="field">
+    <%= f.label :local_state %><br>
+    <%= f.text_field :local_state %>
+  </div>
+  <div class="field">
+    <%= f.label :local_pin %><br>
+    <%= f.number_field :local_pin %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_number %><br>
+    <%= f.text_field :contact_number %>
+  </div>
+  <div class="field">
+    <%= f.label :poi_type %><br>
+    <%= f.text_field :poi_type %>
+  </div>
+  <div class="field">
+    <%= f.label :poa_type %><br>
+    <%= f.text_field :poa_type %>
+  </div>
+  <div class="field">
+    <%= f.label :caf_entry_date %><br>
+    <%= f.date_select :caf_entry_date %>
+  </div>
+  <div class="field">
+    <%= f.label :ageing %><br>
+    <%= f.number_field :ageing %>
+  </div>
+  <div class="field">
+    <%= f.label :ageing_act %><br>
+    <%= f.number_field :ageing_act %>
+  </div>
+  <div class="field">
+    <%= f.label :rsn %><br>
+    <%= f.text_field :rsn %>
+  </div>
+  <div class="field">
+    <%= f.label :activation_date %><br>
+    <%= f.date_select :activation_date %>
+  </div>
+  <div class="field">
+    <%= f.label :av_status %><br>
+    <%= f.text_field :av_status %>
+  </div>
+  <div class="field">
+    <%= f.label :cv_status %><br>
+    <%= f.text_field :cv_status %>
+  </div>
+  <div class="field">
+    <%= f.label :caf_status %><br>
+    <%= f.text_field :caf_status %>
+  </div>
+  <div class="field">
+    <%= f.label :scrutiny_status %><br>
+    <%= f.text_field :scrutiny_status %>
+  </div>
+  <div class="field">
+    <%= f.label :av_user_id %><br>
+    <%= f.text_field :av_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cv_user_id %><br>
+    <%= f.text_field :cv_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :otc_code %><br>
+    <%= f.text_field :otc_code %>
+  </div>
+  <div class="field">
+    <%= f.label :circle %><br>
+    <%= f.text_field :circle %>
+  </div>
+  <div class="field">
+    <%= f.label :caf_ciou %><br>
+    <%= f.text_field :caf_ciou %>
+  </div>
+  <div class="field">
+    <%= f.label :ciou %><br>
+    <%= f.text_field :ciou %>
+  </div>
+  <div class="field">
+    <%= f.label :dnc %><br>
+    <%= f.text_field :dnc %>
+  </div>
+  <div class="field">
+    <%= f.label :telemarketing %><br>
+    <%= f.text_field :telemarketing %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br>
+    <%= f.text_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :av_agency %><br>
+    <%= f.text_field :av_agency %>
+  </div>
+  <div class="field">
+    <%= f.label :av_done_date %><br>
+    <%= f.date_select :av_done_date %>
+  </div>
+  <div class="field">
+    <%= f.label :caf_updated_date %><br>
+    <%= f.text_field :caf_updated_date %>
+  </div>
+  <div class="field">
+    <%= f.label :scrutiny_updated_by %><br>
+    <%= f.text_field :scrutiny_updated_by %>
+  </div>
+  <div class="field">
+    <%= f.label :reorder %><br>
+    <%= f.text_field :reorder %>
+  </div>
+  <div class="field">
+    <%= f.label :operator_name %><br>
+    <%= f.text_field :operator_name %>
+  </div>
+  <div class="field">
+    <%= f.label :operator_credit_limit %><br>
+    <%= f.number_field :operator_credit_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :tariff_plan %><br>
+    <%= f.number_field :tariff_plan %>
+  </div>
+  <div class="field">
+    <%= f.label :old_account_number %><br>
+    <%= f.text_field :old_account_number %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_limit %><br>
+    <%= f.number_field :credit_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :credit_score %><br>
+    <%= f.number_field :credit_score %>
+  </div>
+  <div class="field">
+    <%= f.label :pos_code %><br>
+    <%= f.text_field :pos_code %>
+  </div>
+  <div class="field">
+    <%= f.label :product_type %><br>
+    <%= f.text_field :product_type %>
+  </div>
+  <div class="field">
+    <%= f.label :mnp_flag %><br>
+    <%= f.text_field :mnp_flag %>
+  </div>
+  <div class="field">
+    <%= f.label :service_type %><br>
+    <%= f.text_field :service_type %>
+  </div>
+  <div class="field">
+    <%= f.label :pevious_cv_limit %><br>
+    <%= f.number_field :pevious_cv_limit %>
+  </div>
+  <div class="field">
+    <%= f.label :re_av_count %><br>
+    <%= f.number_field :re_av_count %>
+  </div>
+  <div class="field">
+    <%= f.label :re_av_date %><br>
+    <%= f.date_select :re_av_date %>
+  </div>
+  <div class="field">
+    <%= f.label :av_neg_remarks %><br>
+    <%= f.text_field :av_neg_remarks %>
+  </div>
+  <div class="field">
+    <%= f.label :re_av_reasons %><br>
+    <%= f.text_field :re_av_reasons %>
+  </div>
+  <div class="field">
+    <%= f.label :caf_remark %><br>
+    <%= f.text_field :caf_remark %>
+  </div>
+  <div class="field">
+    <%= f.label :av_neg_sub_reasons %><br>
+    <%= f.text_field :av_neg_sub_reasons %>
+  </div>
+  <div class="field">
+    <%= f.label :cv_done_date %><br>
+    <%= f.date_select :cv_done_date %>
+  </div>
+  <div class="field">
+    <%= f.label :security_amount %><br>
+    <%= f.text_field :security_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :tariff_plan_value %><br>
+    <%= f.text_field :tariff_plan_value %>
+  </div>
+  <div class="field">
+    <%= f.label :product_type_value %><br>
+    <%= f.text_field :product_type_value %>
+  </div>
+  <div class="field">
+    <%= f.label :corp_company_name %><br>
+    <%= f.text_field :corp_company_name %>
+  </div>
+  <div class="field">
+    <%= f.label :wh_status %><br>
+    <%= f.text_field :wh_status %>
+  </div>
+  <div class="field">
+    <%= f.label :omnidocs_status %><br>
+    <%= f.text_field :omnidocs_status %>
+  </div>
+  <div class="field">
+    <%= f.label :tmid %><br>
+    <%= f.text_field :tmid %>
+  </div>
+  <div class="field">
+    <%= f.label :pg_tvp_date %><br>
+    <%= f.date_select :pg_tvp_date %>
+  </div>
+  <div class="field">
+    <%= f.label :tvp_status %><br>
+    <%= f.text_field :tvp_status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

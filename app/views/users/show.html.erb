@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Employee uid:</strong>
+  <%= @user.employee_uid %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @user.admin %>
+</p>
+
+<p>
+  <strong>Photo file name:</strong>
+  <%= @user.photo_file_name %>
+</p>
+
+<p>
+  <strong>Photo content type:</strong>
+  <%= @user.photo_content_type %>
+</p>
+
+<p>
+  <strong>Photo file size:</strong>
+  <%= @user.photo_file_size %>
+</p>
+
+<p>
+  <strong>Photo updated at:</strong>
+  <%= @user.photo_updated_at %>
+</p>
+
+<p>
+  <strong>Role name:</strong>
+  <%= @user.role_name %>
+</p>
+
+<p>
+  <strong>Tab:</strong>
+  <%= @user.tab_id %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Logout at:</strong>
+  <%= @user.logout_at %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
