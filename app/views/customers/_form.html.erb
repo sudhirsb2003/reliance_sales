@@ -10,333 +10,384 @@
       </ul>
     </div>
   <% end %>
-
+ <div class="row">
   <div class="field">
-    <%= f.label :caf_number %><br>
+    <%= f.label :caf_number %>
     <%= f.number_field :caf_number %>
   </div>
   <div class="field">
-    <%= f.label :len %><br>
+    <%= f.label :len %>
     <%= f.number_field :len %>
   </div>
   <div class="field">
-    <%= f.label :old_caf_number %><br>
+    <%= f.label :old_caf_number %>
     <%= f.number_field :old_caf_number %>
   </div>
   <div class="field">
-    <%= f.label :parent_Account_number %><br>
+    <%= f.label :parent_Account_number %>
     <%= f.number_field :parent_Account_number %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :account_number %><br>
+    <%= f.label :account_number %>
     <%= f.number_field :account_number %>
   </div>
   <div class="field">
-    <%= f.label :mdn %><br>
+    <%= f.label :mdn %>
     <%= f.number_field :mdn %>
   </div>
   <div class="field">
-    <%= f.label :first_name %><br>
+    <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
+</div>
+  <div class="row">
   <div class="field">
-    <%= f.label :middle_name %><br>
+    <%= f.label :middle_name %>
     <%= f.text_field :middle_name %>
   </div>
   <div class="field">
-    <%= f.label :fh_name %><br>
+    <%= f.label :fh_name %>
     <%= f.text_field :fh_name %>
   </div>
   <div class="field">
-    <%= f.label :nationality %><br>
+    <%= f.label :nationality %>
     <%= f.text_field :nationality %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :gender %><br>
+    <%= f.label :gender %>
     <%#= f.text_field :gender %>
     <%= f.select :gender, [['Male', 'Male'], ['Female', 'Female']], {:prompt => "Select"} %>
   </div>
   <div class="field">
-    <%= f.label :dob %><br>
+    <%= f.label :"date of birth" %>
     <%= f.date_select :dob %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :customer_type %><br>
+    <%= f.label :customer_type %>
     <%= f.text_field :customer_type %>
   </div>
   <div class="field">
-    <%= f.label :cust_category %><br>
+    <%= f.label :cust_category %>
     <%= f.text_field :cust_category %>
   </div>
   <div class="field">
-    <%= f.label :entity_name %><br>
+    <%= f.label :entity_name %>
     <%= f.text_field :entity_name %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :address_1 %><br>
+    <%= f.label :address_1 %>
     <%= f.text_field :address_1 %>
   </div>
   <div class="field">
-    <%= f.label :address_2 %><br>
+    <%= f.label :address_2 %>
     <%= f.text_field :address_2 %>
   </div>
   <div class="field">
-    <%= f.label :landmark %><br>
+    <%= f.label :landmark %>
     <%= f.text_field :landmark %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :city %><br>
+    <%= f.label :city %>
     <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label :state %><br>
+    <%= f.label :state %>
     <%= f.text_field :state %>
   </div>
   <div class="field">
-    <%= f.label :pincode %><br>
+    <%= f.label :pincode %>
     <%= f.text_field :pincode %>
   </div>
+</div>
+ <div class="row">
   <div class="field">
-    <%= f.label :local_address_1 %><br>
+    <%= f.label :local_address_1 %>
     <%= f.text_field :local_address_1 %>
   </div>
   <div class="field">
-    <%= f.label :local_address_2 %><br>
+    <%= f.label :local_address_2 %>
     <%= f.text_field :local_address_2 %>
   </div>
   <div class="field">
-    <%= f.label :local_city %><br>
+    <%= f.label :local_city %>
     <%= f.text_field :local_city %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :local_state %><br>
+    <%= f.label :local_state %>
     <%= f.text_field :local_state %>
   </div>
   <div class="field">
-    <%= f.label :local_pin %><br>
+    <%= f.label :local_pin %>
     <%= f.number_field :local_pin %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :contact_number %><br>
+    <%= f.label :contact_number %>
     <%= f.text_field :contact_number %>
   </div>
   <div class="field">
-    <%= f.label :poi_type %><br>
+    <%= f.label :poi_type %>
     <%= f.text_field :poi_type %>
   </div>
   <div class="field">
-    <%= f.label :poa_type %><br>
+    <%= f.label :poa_type %>
     <%= f.text_field :poa_type %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :caf_entry_date %><br>
+    <%= f.label :caf_entry_date %>
     <%= f.date_select :caf_entry_date %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :ageing %><br>
+    <%= f.label :ageing %>
     <%= f.number_field :ageing %>
   </div>
   <div class="field">
-    <%= f.label :ageing_act %><br>
+    <%= f.label :ageing_act %>
     <%= f.number_field :ageing_act %>
   </div>
   <div class="field">
-    <%= f.label :rsn %><br>
+    <%= f.label :rsn %>
     <%= f.text_field :rsn %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :activation_date %><br>
+    <%= f.label :activation_date %>
     <%= f.date_select :activation_date %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :av_status %><br>
+    <%= f.label :av_status %>
     <%= f.text_field :av_status %>
   </div>
   <div class="field">
-    <%= f.label :cv_status %><br>
+    <%= f.label :cv_status %>
     <%= f.text_field :cv_status %>
   </div>
   <div class="field">
-    <%= f.label :caf_status %><br>
+    <%= f.label :caf_status %>
     <%= f.text_field :caf_status %>
   </div>
   <div class="field">
-    <%= f.label :scrutiny_status %><br>
+    <%= f.label :scrutiny_status %>
     <%= f.text_field :scrutiny_status %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :av_user_id %><br>
+    <%= f.label :av_user_id %>
     <%= f.text_field :av_user_id %>
   </div>
   <div class="field">
-    <%= f.label :cv_user_id %><br>
+    <%= f.label :cv_user_id %>
     <%= f.text_field :cv_user_id %>
   </div>
   <div class="field">
-    <%= f.label :otc_code %><br>
+    <%= f.label :otc_code %>
     <%= f.text_field :otc_code %>
   </div>
   <div class="field">
-    <%= f.label :circle %><br>
+    <%= f.label :circle %>
     <%= f.text_field :circle %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :caf_ciou %><br>
+    <%= f.label :caf_ciou %>
     <%= f.text_field :caf_ciou %>
   </div>
   <div class="field">
-    <%= f.label :ciou %><br>
+    <%= f.label :ciou %>
     <%= f.text_field :ciou %>
   </div>
   <div class="field">
-    <%= f.label :dnc %><br>
+    <%= f.label :dnc %>
     <%= f.text_field :dnc %>
   </div>
   <div class="field">
-    <%= f.label :telemarketing %><br>
+    <%= f.label :telemarketing %>
     <%= f.text_field :telemarketing %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :mobile %><br>
+    <%= f.label :mobile %>
     <%= f.text_field :mobile %>
   </div>
   <div class="field">
-    <%= f.label :av_agency %><br>
+    <%= f.label :av_agency %>
     <%= f.text_field :av_agency %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :av_done_date %><br>
+    <%= f.label :av_done_date %>
     <%= f.date_select :av_done_date %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :caf_updated_date %><br>
+    <%= f.label :caf_updated_date %>
     <%= f.text_field :caf_updated_date %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :scrutiny_updated_by %><br>
+    <%= f.label :scrutiny_updated_by %>
     <%= f.text_field :scrutiny_updated_by %>
   </div>
   <div class="field">
-    <%= f.label :reorder %><br>
+    <%= f.label :reorder %>
     <%= f.text_field :reorder %>
   </div>
   <div class="field">
-    <%= f.label :operator_name %><br>
+    <%= f.label :operator_name %>
     <%= f.text_field :operator_name %>
   </div>
   <div class="field">
-    <%= f.label :operator_credit_limit %><br>
+    <%= f.label :operator_credit_limit %>
     <%= f.number_field :operator_credit_limit %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :tariff_plan %><br>
+    <%= f.label :tariff_plan %>
     <%= f.number_field :tariff_plan %>
   </div>
   <div class="field">
-    <%= f.label :old_account_number %><br>
+    <%= f.label :old_account_number %>
     <%= f.text_field :old_account_number %>
   </div>
   <div class="field">
-    <%= f.label :credit_limit %><br>
+    <%= f.label :credit_limit %>
     <%= f.number_field :credit_limit %>
   </div>
   <div class="field">
-    <%= f.label :credit_score %><br>
+    <%= f.label :credit_score %>
     <%= f.number_field :credit_score %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :pos_code %><br>
+    <%= f.label :pos_code %>
     <%= f.text_field :pos_code %>
   </div>
   <div class="field">
-    <%= f.label :product_type %><br>
+    <%= f.label :product_type %>
     <%= f.text_field :product_type %>
   </div>
   <div class="field">
-    <%= f.label :mnp_flag %><br>
+    <%= f.label :mnp_flag %>
     <%= f.text_field :mnp_flag %>
   </div>
   <div class="field">
-    <%= f.label :service_type %><br>
+    <%= f.label :service_type %>
     <%= f.text_field :service_type %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :pevious_cv_limit %><br>
+    <%= f.label :pevious_cv_limit %>
     <%= f.number_field :pevious_cv_limit %>
   </div>
   <div class="field">
-    <%= f.label :re_av_count %><br>
+    <%= f.label :re_av_count %>
     <%= f.number_field :re_av_count %>
   </div>
   <div class="field">
-    <%= f.label :re_av_date %><br>
+    <%= f.label :re_av_date %>
     <%= f.date_select :re_av_date %>
   </div>
   <div class="field">
-    <%= f.label :av_neg_remarks %><br>
+    <%= f.label :av_neg_remarks %>
     <%= f.text_field :av_neg_remarks %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :re_av_reasons %><br>
+    <%= f.label :re_av_reasons %>
     <%= f.text_field :re_av_reasons %>
   </div>
   <div class="field">
-    <%= f.label :caf_remark %><br>
+    <%= f.label :caf_remark %>
     <%= f.text_field :caf_remark %>
   </div>
   <div class="field">
-    <%= f.label :av_neg_sub_reasons %><br>
+    <%= f.label :av_neg_sub_reasons %>
     <%= f.text_field :av_neg_sub_reasons %>
   </div>
   <div class="field">
-    <%= f.label :cv_done_date %><br>
+    <%= f.label :cv_done_date %>
     <%= f.date_select :cv_done_date %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :security_amount %><br>
+    <%= f.label :security_amount %>
     <%= f.text_field :security_amount %>
   </div>
   <div class="field">
-    <%= f.label :tariff_plan_value %><br>
+    <%= f.label :tariff_plan_value %>
     <%= f.text_field :tariff_plan_value %>
   </div>
   <div class="field">
-    <%= f.label :product_type_value %><br>
+    <%= f.label :product_type_value %>
     <%= f.text_field :product_type_value %>
   </div>
   <div class="field">
-    <%= f.label :corp_company_name %><br>
+    <%= f.label :corp_company_name %>
     <%= f.text_field :corp_company_name %>
   </div>
+</div>
+<div class="row">
   <div class="field">
-    <%= f.label :wh_status %><br>
+    <%= f.label :wh_status %>
     <%= f.text_field :wh_status %>
   </div>
   <div class="field">
-    <%= f.label :omnidocs_status %><br>
+    <%= f.label :omnidocs_status %>
     <%= f.text_field :omnidocs_status %>
   </div>
   <div class="field">
-    <%= f.label :tmid %><br>
+    <%= f.label :tmid %>
     <%= f.text_field :tmid %>
   </div>
   <div class="field">
-    <%= f.label :pg_tvp_date %><br>
+    <%= f.label :pg_tvp_date %>
     <%= f.date_select :pg_tvp_date %>
   </div>
   <div class="field">
-    <%= f.label :tvp_status %><br>
+    <%= f.label :tvp_status %>
     <%= f.text_field :tvp_status %>
   </div>
+</div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class=> 'btn btn-success' %>
   </div>
 <% end %>

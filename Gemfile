@@ -36,7 +36,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bullet', group: :development
 gem 'workflow'
-gem 'friendly_id'
+gem "friendly_id", "~> 5.0.1"
 gem 'faker'
 gem 'kaminari'
 gem 'gmaps4rails'
@@ -59,7 +59,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 group :development do
   gem 'webrick', '1.3.1'
   gem 'quiet_assets'
-
   gem "better_errors"
   gem "binding_of_caller"
   gem 'bootstrap-sass'

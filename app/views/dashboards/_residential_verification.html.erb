@@ -1,0 +1,30 @@
+<style>
+ .pending {color:orange;}
+ .in_progress {color:purple; }
+ .completed {color: green; }
+</style>
+<p> Residential Verifications</p>
+<table class="table table-condensed table-bordered table-striped">
+	<tr>
+		<th> Tab Name </th>
+		<th> Customer Name  </th>
+		<th> Status </th>
+	</tr>
+		<% @assignments.each do |task| %>
+	<tr>
+		<%  if task.tab.user.present? %>
+		<td><%= link_to task.tab.user.name, task.tab.user %></td>
+		<% else %>
+		<td>No Tab </td>
+		<% end %>
+		<td><%= task.customer.applicant_name if task.customer %><%= task.customer_office.customer.applicant_name if task.customer_office %></td>
+		<% if task.customer.status == 'submitted' %>
+   <td class="in_progress"><%= task.customer.status if task.customer %></td>
+  <% elsif %>
+   <td class="completed"><%= task.customer.status if task.customer %></td>
+  <% else %>
+   <td class="pending"><%= task.customer.status if task.customer %></td>
+  <% end %>
+	</tr>
+	<% end %>
+</table>

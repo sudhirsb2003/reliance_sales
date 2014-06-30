@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 1
+  tab_id: 1
+  user_id: 1
+  alternate_number: MyString
+  locality: MyString
+  network_signal: MyString
+  address_verified: MyString
+  contact_person_name: MyString
+  relation: MyString
+  product_type: MyString
+  category: MyString
+  tariff_plan_confirm: false
+  usage_detail: MyString
+  receive_monthly_bill: MyString
+  address_proof: MyString
+  pan_card: MyString
+  house_ownership: MyString
+  staying_since: 1.5
+  type_of_residence: MyString
+  handset_used: MyString
+  vehicle_owned: MyString
+  occupation: MyString
+  credit_card: false
+  ebill: false
+  ecs: false
+
+two:
+  customer_id: 1
+  tab_id: 1
+  user_id: 1
+  alternate_number: MyString
+  locality: MyString
+  network_signal: MyString
+  address_verified: MyString
+  contact_person_name: MyString
+  relation: MyString
+  product_type: MyString
+  category: MyString
+  tariff_plan_confirm: false
+  usage_detail: MyString
+  receive_monthly_bill: MyString
+  address_proof: MyString
+  pan_card: MyString
+  house_ownership: MyString
+  staying_since: 1.5
+  type_of_residence: MyString
+  handset_used: MyString
+  vehicle_owned: MyString
+  occupation: MyString
+  credit_card: false
+  ebill: false
+  ecs: false

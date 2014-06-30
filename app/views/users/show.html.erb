@@ -1,69 +1,49 @@
-<p id="notice"><%= notice %></p>
+<b style="font-size:20px;color:orange;text-transform:uppercase;"><%= @user.name %></b>
+(<%= link_to 'edit', edit_user_path(@user) %>)
+<% if @user.tab.present? %>
+  <h6>Tab Name:  <%= @user.tab.name %></h6>
+<% else !@user.admin? %>
+  <%= form_for User.find(@user) do |tab| %>
+   <%= tab.collection_select :tab_id, @array_without_excluded_ids, :id, :name, prompt: true %>
+   <%= tab.submit :class=>"btn btn-warning" %>
+  <% end %>
+<% end %>
+<table class="table table-condensed table-bordered">
+<tr>
+  <td><strong>Name:</strong></td>
+  <td><%= @user.name %></td>
+</tr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<tr>
+  <td><strong>Address:</strong></td>
+  <td><%= @user.address %></td>
+</tr>
 
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
+<tr>
+  <td><strong>Employee uid:</strong></td>
+  <td><%= @user.employee_uid %></td>
+</tr>
 
-<p>
-  <strong>Employee uid:</strong>
-  <%= @user.employee_uid %>
-</p>
+<tr>
+  <td><strong>Admin:</strong></td>
+  <td><%= @user.admin %></td>
+</tr>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
+<tr>
+  <td><strong>Role name:</strong></td>
+  <td><%= @user.role_name %></td>
+</tr>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+<tr>
+  <td><strong>Tab:</strong></td>
+  <td><%= @user.tab_id %></td>
+</tr>
 
-<p>
-  <strong>Photo file name:</strong>
-  <%= @user.photo_file_name %>
-</p>
-
-<p>
-  <strong>Photo content type:</strong>
-  <%= @user.photo_content_type %>
-</p>
-
-<p>
-  <strong>Photo file size:</strong>
-  <%= @user.photo_file_size %>
-</p>
-
-<p>
-  <strong>Photo updated at:</strong>
-  <%= @user.photo_updated_at %>
-</p>
-
-<p>
-  <strong>Role name:</strong>
-  <%= @user.role_name %>
-</p>
-
-<p>
-  <strong>Tab:</strong>
-  <%= @user.tab_id %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Logout at:</strong>
-  <%= @user.logout_at %>
-</p>
+<tr>
+  <td><strong>Username:</strong></td>
+  <td><%= @user.username %></td>
+</tr>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</table>

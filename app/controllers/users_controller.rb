@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if params[:term].present?
-      @users = User.order(:name).where("name ilike ? and admin is false ","%#{params[:term]}%")
-      render json: @users.map(&:name)
-    else
+    #if params[:term].present?
+    #  @users = User.order(:name).where("name ilike ? and admin is false ","%#{params[:term]}%")
+    #  render json: @users.map(&:name)
+    #else
       @users= User.all.includes(:tab)
-      render html: @users
-    end
+    #  render html: @users
+    #end
   end
 
   # GET /users/1

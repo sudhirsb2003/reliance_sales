@@ -52,15 +52,15 @@ footer {
   </button>
   <ul class="dropdown-menu" role="menu">
     <% if current_user.admin? %>  
-        <li><%= link_to "Tabs", customers_path %></li>
-        <li><%= link_to "List users", customers_path  %></li>
+        <li><%= link_to "Tabs", tabs_path %></li>
+        <li><%= link_to "List users", users_path  %></li>
         <li><%= link_to "Add Customer", customers_path %></li>    
         <li><%= link_to "List Task on the tab", customers_path  %></li>      
         <li><%= link_to "Accounts", customers_path if logged_in? %></li>
         <li class="divider"></li>
         <li><%= link_to "Signout" ,logout_path ,:method => :delete %></li>
       <% else %> 
-        <li><%= link_to "Accounts", accounts_path if logged_in? %></li>
+        <li><%= link_to "Accounts", root_path if logged_in? %></li>
         <li class="divider"></li>
         <li><%= link_to "Signout" ,logout_path ,:method => :delete %></li>
     <% end %>

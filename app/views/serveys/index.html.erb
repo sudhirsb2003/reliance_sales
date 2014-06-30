@@ -1,0 +1,73 @@
+<h1>Listing serveys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Tab</th>
+      <th>User</th>
+      <th>Alternate number</th>
+      <th>Locality</th>
+      <th>Network signal</th>
+      <th>Address verified</th>
+      <th>Contact person name</th>
+      <th>Relation</th>
+      <th>Product type</th>
+      <th>Category</th>
+      <th>Tariff plan confirm</th>
+      <th>Usage detail</th>
+      <th>Receive monthly bill</th>
+      <th>Address proof</th>
+      <th>Pan card</th>
+      <th>House ownership</th>
+      <th>Staying since</th>
+      <th>Type of residence</th>
+      <th>Handset used</th>
+      <th>Vehicle owned</th>
+      <th>Occupation</th>
+      <th>Credit card</th>
+      <th>Ebill</th>
+      <th>Ecs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @serveys.each do |servey| %>
+      <tr>
+        <td><%= servey.customer_id %></td>
+        <td><%= servey.tab_id %></td>
+        <td><%= servey.user_id %></td>
+        <td><%= servey.alternate_number %></td>
+        <td><%= servey.locality %></td>
+        <td><%= servey.network_signal %></td>
+        <td><%= servey.address_verified %></td>
+        <td><%= servey.contact_person_name %></td>
+        <td><%= servey.relation %></td>
+        <td><%= servey.product_type %></td>
+        <td><%= servey.category %></td>
+        <td><%= servey.tariff_plan_confirm %></td>
+        <td><%= servey.usage_detail %></td>
+        <td><%= servey.receive_monthly_bill %></td>
+        <td><%= servey.address_proof %></td>
+        <td><%= servey.pan_card %></td>
+        <td><%= servey.house_ownership %></td>
+        <td><%= servey.staying_since %></td>
+        <td><%= servey.type_of_residence %></td>
+        <td><%= servey.handset_used %></td>
+        <td><%= servey.vehicle_owned %></td>
+        <td><%= servey.occupation %></td>
+        <td><%= servey.credit_card %></td>
+        <td><%= servey.ebill %></td>
+        <td><%= servey.ecs %></td>
+        <td><%= link_to 'Show', servey %></td>
+        <td><%= link_to 'Edit', edit_servey_path(servey) %></td>
+        <td><%= link_to 'Destroy', servey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Servey', new_servey_path %>

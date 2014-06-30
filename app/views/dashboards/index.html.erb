@@ -1,2 +1,38 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
+<% if logged_in? && current_user.role_name == "super_user" %>
+  <%#= render "super_user" %>
+  <b><p style="font-size:15px;color:green;text-transform:capitalize;">Welcome, <%= current_user.name %> <i class="icon-user"></i></p></b><hr>
+
+<h5>Completed Verifications</h5>
+
+<table class="table table-condensed table-striped table-bordered">
+	<tr>
+		<td style="padding-left:20px;">Completed Verification</td>
+		<td style="padding-left:20px;">Pending Verification</td>
+        <td style="padding-left:20px;">In Progress Verification</td>
+	</tr>
+	<tr>
+	<% if @completed_customers.present? %>
+		<td><h1 style="padding-left:50px;"><%= link_to @completed_customers.count, completed_path %></h1></td>
+	<% else %>
+		<td><h1> 0 </h1></td>
+    <% end %>
+
+	<% if @pending_customers.present? %>
+		<td><h1 style="padding-left:50px;"><%= link_to @pending_customers.count, pending_path %></h1></td>
+	<% else %>
+		<td><h1> 0 </h1></td>
+	<% end %>
+
+    <% if @in_progress_customers.present? %>
+        <td><h1 style="padding-left:50px;"><%= link_to @in_progress_customers.count, in_progress_path %></h1></td>
+	<% else %>
+        <td><h1> 0 </h1></td>
+	<% end %>
+	</tr>
+</table>
+	<hr>
+
+
+<% elsif logged_in? && current_user.role_name == "tab_user" %>
+  <%= render "tab" %>
+<% end %>

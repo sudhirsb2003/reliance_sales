@@ -234,7 +234,7 @@ DEPENDENCIES
   devise
   faker
   flatui-rails
-  friendly_id
+  friendly_id (~> 5.0.1)
   geocoder
   gmaps4rails
   iconv

@@ -28,10 +28,11 @@ class AssignmentsController < ApplicationController
 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
-        format.json { render :show, status: :created, location: @assignment }
+         @assignment.customer.submit!
+        format.html { redirect_to customer_path(@assignment.customer), notice: 'Assignment was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @assignment }
       else
-        format.html { render :new }
+        format.html { render action: 'new' }
         format.json { render json: @assignment.errors, status: :unprocessable_entity }
       end
     end

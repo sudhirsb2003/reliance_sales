@@ -1,0 +1,143 @@
+<style>
+ label{font-weight:bold;}
+</style>
+<%= form_for(@servey) do |f| %>
+  <% if @servey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@servey.errors.count, "error") %> prohibited this servey from being saved:</h2>
+
+      <ul>
+      <% @servey.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table style="font-size:13px;font-weight:bold;color:teal" class="table table-bordered table-striped table-condensed">
+<tr>
+ <td> Customer Name </td>
+ <td><%= @customer.full_name %></td>
+</tr>
+<tr>
+ <td> Mobile No: </td>
+ <td> <%= @customer.contact_number %></td>
+</tr>
+<tr>
+ <td> Tariff Plan </td>
+ <td><%= @customer.tariff_plan %></td>
+</tr>
+<tr>
+ <td> Product Type </td>
+ <td><%= @customer.product_type %></td>
+</tr>
+<tr>
+ <td> Alternate Number </td>
+ <td><%= @customer.mobile %></td>
+</tr>
+
+</table>
+
+  <div class="field">
+    <%= f.hidden_field :customer_id, :value => @customer.id %>
+    <%= f.hidden_field :tab_id, :value => current_user.tab_id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :alternate_number %>
+    <%= f.text_field :alternate_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :locality %>
+    <%#= f.text_field :locality %>
+    <%= f.radio_button :locality, :class=> "btn", :value=> 'Very Easy to Locate' %> Very Easy to Locate <br>
+    <%= f.radio_button :locality, :class=> "btn", :value=> 'Easy to Locate' %> Easy to Locate<br>
+    <%= f.radio_button :locality, :class=> "btn", :value=> 'Address in Negative Area' %> Address in Negative Area<br>
+    <%= f.radio_button :locality, :class=> "btn", :value=> 'Difficult to locate' %> Difficult to locate
+  </div><br>
+
+  <div class="field">
+    <%= f.label :network_signal %>
+    <%#= f.text_field :network_signal %>
+    <%= f.radio_button :network_signal, :class=> "btn", :value=> '1 or 2' %> 1 or 2 <br>
+    <%= f.radio_button :network_signal, :class=> "btn", :value=> '3' %> 3 <br>
+    <%= f.radio_button :network_signal, :class=> "btn", :value=> '4 or 5' %> 4 or 5 <br>
+  </div><br>
+
+  <div class="field">
+    <%= f.label :address_verified %>
+    <%= f.text_field :address_verified %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_person_name %>
+    <%= f.text_field :contact_person_name %>
+  </div>
+  <div class="field">
+    <%= f.label :relation %>
+    <%= f.text_field :relation %>
+  </div>
+  <div class="field">
+    <%= f.label :product_type %>
+    <%= f.text_field :product_type %>
+  </div>
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :tariff_plan_confirm %>
+    <%= f.check_box :tariff_plan_confirm %>
+  </div>
+  <div class="field">
+    <%= f.label :usage_detail %>
+    <%= f.text_field :usage_detail %>
+  </div>
+  <div class="field">
+    <%= f.label :receive_monthly_bill %>
+    <%= f.text_field :receive_monthly_bill %>
+  </div>
+  <div class="field">
+    <%= f.label :address_proof %>
+    <%= f.text_field :address_proof %>
+  </div>
+  <div class="field">
+    <%= f.label :pan_card %>
+    <%= f.text_field :pan_card %>
+  </div>
+  <div class="field">
+    <%= f.label :house_ownership %>
+    <%= f.text_field :house_ownership %>
+  </div>
+  <div class="field">
+    <%= f.label :staying_since %>
+    <%= f.text_field :staying_since %>
+  </div>
+  <div class="field">
+    <%= f.label :type_of_residence %>
+    <%= f.text_field :type_of_residence %>
+  </div>
+  <div class="field">
+    <%= f.label :handset_used %>
+    <%= f.text_field :handset_used %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle_owned %>
+    <%= f.text_field :vehicle_owned %>
+  </div>
+  <div class="field">
+    <%= f.label :occupation %>
+    <%= f.text_field :occupation %>
+  </div>
+
+  <div class="field">
+   Credit Card: <%= f.check_box :credit_card %>
+   Ebill: <%= f.check_box :ebill %>
+   ECS: <%= f.check_box :ecs %>
+  </div><br><br>
+
+  <div class="actions">
+    <%= f.submit :class=>"btn btn-primary" %>
+  </div>
+<% end %>

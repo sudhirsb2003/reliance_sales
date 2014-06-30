@@ -5,12 +5,14 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all
+    @customers = Customer.order(:id)
   end
 
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @customer = Customer.friendly.find(params[:id])
+    @new_assignments = Assignment.new
   end
 
   # GET /customers/new
@@ -61,6 +63,25 @@ class CustomersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def import
+   Customer.import params[:file]
+   redirect_to customers_path, notice: "Imported!!"
+  end
+
+  def completed
+   @completed_customers = Customer.where(status: "verified")
+  end
+
+  def pending
+   @pending_customers = Customer.where(status: "submitted")
+  end
+
+  def in_progress
+   @in_progress_customers = Customer.where(status: "completed")
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

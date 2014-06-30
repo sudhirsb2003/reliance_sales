@@ -1,7 +1,7 @@
 table.list td form {border:1px solid #000; border-width:1px 0;padding:5px 0;}
 
 table.list {
-	width:100%;	
+	width:100%;
 	margin:10px 0;
 }
 table.list th a {color:#000!important;}
@@ -9,7 +9,7 @@ table.list th a {color:#000!important;}
 table.list thead th {
   padding:5px 2px;
   text-align:left;
-  font-weight:bold;	
+  font-weight:bold;
 }
 table.list td, table.list th {
 	padding:2px;
@@ -36,19 +36,19 @@ label {
 
 .reqd {color:#e00}
 label.reqd {
-	font-weight:bold;	
+	font-weight:bold;
     color:yellow;
 }
 
 fieldset {
 	border:0;
 	border-bottom:1px solid #eee;
-	margin:5px 0;	
+	margin:5px 0;
 }
 
 /*
 legend {
-	font-size:16px;	
+	font-size:16px;
 	font-weight:bold;
 	color:#666;
 	padding:0;
@@ -57,10 +57,11 @@ legend {
 */
 
 input[type=submit] {
-	margin:auto;
+	margin:	-10px 0px 0px 10px ;
+
 }
 input[type=submit] {
-	font-size:13px;	
+	font-size:13px;
 }
 
 div.row {margin:10px 0;padding:2px 0;width:100%;overflow:hidden;}
@@ -81,11 +82,11 @@ ul.options {
 	overflow:hidden;
 }
 ul.options li {
-	margin:5px 0;	
+	margin:5px 0;
 }
 
 ul.options label {
-	color:#333;	
+	color:#333;
 	margin-right:10px;
 }
 

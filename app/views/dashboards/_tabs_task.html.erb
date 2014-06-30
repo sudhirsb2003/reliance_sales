@@ -1,0 +1,12 @@
+<table class="table table-condensed table-bordered table-striped">
+<tr>
+	<th> Tab Name </th>
+	<th> Number of task </th>
+</tr>
+<% Tab.all.includes(:assignments).each do |t| %>
+<tr>
+	<td><%= t.name %></td>
+	<td><%= t.assignments.includes(:assignments).count %></td>
+</tr>
+<% end %>
+<table>

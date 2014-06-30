@@ -20,12 +20,15 @@ label {
 <table class="table table-condensed table-bordered table-striped">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Caf number</th>
       <th>Account number</th>
+      <th>old caf number</th>      
       <th>Mdn</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Middle name</th>
+      <th>Gender</th>
       <th>Fh name</th>
       <th>Customer type</th>
       <th>Cust category</th>
@@ -36,18 +39,19 @@ label {
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= customer.caf_number %></td>
+        <td><%= customer.id %></td>
+        <td><%= link_to customer.caf_number, customer %></td>
         <td><%= customer.account_number %></td>
+        <td><%= customer.old_caf_number %></td>
         <td><%= customer.mdn %></td>
         <td><%= customer.first_name %></td>
         <td><%= customer.last_name %></td>
         <td><%= customer.middle_name %></td>
+        <td><%= customer.gender %></td>
         <td><%= customer.fh_name %></td>
-        <td><%= customer.nationality %></td>
         <td><%= customer.customer_type %></td>
         <td><%= customer.cust_category %></td>
         <td><%= customer.contact_number %></td>
-        <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

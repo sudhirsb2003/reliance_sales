@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628033613) do
+ActiveRecord::Schema.define(version: 20140629131402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 20140628033613) do
   end
 
   create_table "customers", force: true do |t|
-    t.integer  "caf_number"
+    t.integer  "caf_number",            limit: 8
     t.integer  "len"
-    t.integer  "old_caf_number"
-    t.integer  "parent_Account_number"
-    t.integer  "account_number"
-    t.integer  "mdn"
+    t.integer  "old_caf_number",        limit: 8
+    t.integer  "parent_Account_number", limit: 8
+    t.integer  "account_number",        limit: 8
+    t.integer  "mdn",                   limit: 8
     t.string   "first_name"
     t.string   "last_name"
     t.string   "middle_name"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20140628033613) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "status"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -123,6 +124,36 @@ ActiveRecord::Schema.define(version: 20140628033613) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "serveys", force: true do |t|
+    t.integer  "customer_id"
+    t.integer  "tab_id"
+    t.integer  "user_id"
+    t.string   "alternate_number"
+    t.string   "locality"
+    t.string   "network_signal"
+    t.string   "address_verified"
+    t.string   "contact_person_name"
+    t.string   "relation"
+    t.string   "product_type"
+    t.string   "category"
+    t.boolean  "tariff_plan_confirm"
+    t.string   "usage_detail"
+    t.string   "receive_monthly_bill"
+    t.string   "address_proof"
+    t.string   "pan_card"
+    t.string   "house_ownership"
+    t.float    "staying_since"
+    t.string   "type_of_residence"
+    t.string   "handset_used"
+    t.string   "vehicle_owned"
+    t.string   "occupation"
+    t.boolean  "credit_card"
+    t.boolean  "ebill"
+    t.boolean  "ecs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tabs", force: true do |t|
     t.string   "name"

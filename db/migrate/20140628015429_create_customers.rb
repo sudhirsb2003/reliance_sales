@@ -1,12 +1,12 @@
 class CreateCustomers < ActiveRecord::Migration
   def change
     create_table :customers do |t|
-      t.integer :caf_number
+      t.integer :caf_number, :limit => 8
       t.integer :len
-      t.integer :old_caf_number
-      t.integer :parent_Account_number
-      t.integer :account_number
-      t.integer :mdn
+      t.integer :old_caf_number, :limit => 8
+      t.integer :parent_Account_number, :limit => 8
+      t.integer :account_number, :limit => 8
+      t.integer :mdn, :limit => 8
       t.string :first_name
       t.string :last_name
       t.string :middle_name
