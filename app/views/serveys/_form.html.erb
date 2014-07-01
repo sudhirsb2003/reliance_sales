@@ -1,5 +1,20 @@
 <style>
  label{font-weight:bold;}
+ fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+            width:200px;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+
+}
 </style>
 <%= form_for(@servey) do |f| %>
   <% if @servey.errors.any? %>
@@ -52,10 +67,10 @@
   <div class="field">
     <%= f.label :locality %>
     <%#= f.text_field :locality %>
-    <%= f.radio_button :locality, :class=> "btn", :value=> 'Very Easy to Locate' %> Very Easy to Locate <br>
-    <%= f.radio_button :locality, :class=> "btn", :value=> 'Easy to Locate' %> Easy to Locate<br>
-    <%= f.radio_button :locality, :class=> "btn", :value=> 'Address in Negative Area' %> Address in Negative Area<br>
-    <%= f.radio_button :locality, :class=> "btn", :value=> 'Difficult to locate' %> Difficult to locate
+    <%= f.radio_button :locality, :class=> "btn", :value=> 'Rural area' %> Rural area <br>
+    <%= f.radio_button :locality, :class=> "btn", :value=> 'Affluent' %> Affluent<br>
+    <%= f.radio_button :locality, :class=> "btn", :value=> 'Upper Middle Class' %> Upper Middle Class<br>
+    <%= f.radio_button :locality, :class=> "btn", :value=> 'Lower middle class' %> Lower middle class
   </div><br>
 
   <div class="field">
@@ -68,31 +83,67 @@
 
   <div class="field">
     <%= f.label :address_verified %>
-    <%= f.text_field :address_verified %>
+    <%#= f.text_field :address_verified %>
+    <%= f.radio_button :address_verified, :class=> "btn", :value=> 'Door Locked' %> Door Locked <br>
+    <%= f.radio_button :address_verified, :class=> "btn", :value=> 'Address Not Found' %> Address Not Found <br>
+    <%= f.radio_button :address_verified, :class=> "btn", :value=> 'Existence Confirmed' %> Existence Confirmed <br>
   </div>
   <div class="field">
     <%= f.label :contact_person_name %>
     <%= f.text_field :contact_person_name %>
-  </div>
+  </div><br>
   <div class="field">
     <%= f.label :relation %>
-    <%= f.text_field :relation %>
-  </div>
+    <%#= f.text_field :relation %>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Self' %> Self <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Neigbour' %> Neigbour <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Brother' %> Brother <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Mother' %> Mother <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Sister' %> Sister <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Wife' %> Wife <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Husband' %> Husband <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Daughter' %> Daughter <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Son' %> Son <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Aunty' %> Aunty <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Uncle' %> Uncle <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Friend' %> Friend <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Collegue' %> Collegue <br>
+    <%= f.radio_button :relation, :class=> "btn", :value=> 'Room Owner/Refused' %> Room Owner/Refused <br>
+  </div><br>
   <div class="field">
     <%= f.label :product_type %>
-    <%= f.text_field :product_type %>
-  </div>
+    <%#= f.text_field :product_type %>
+    <%= f.radio_button :product_type, :class=> "btn", :value=> 'CDMA' %> CDMA <br>
+    <%= f.radio_button :product_type, :class=> "btn", :value=> 'GSM' %> GSM <br>
+  </div><br>
+
   <div class="field">
     <%= f.label :category %>
-    <%= f.text_field :category %>
-  </div>
+    <%#= f.text_field :category %>
+    <fieldset class="scheduler-border">
+    <legend class="scheduler-border">CDMA</legend>
+       <div class="control-group">        
+          <%= f.radio_button :category, :class=> "btn", :value=> 'RIM' %> RIM <br>
+          <%= f.radio_button :category, :class=> "btn", :value=> 'HSD' %> HSD <br>
+          <%= f.radio_button :category, :class=> "btn", :value=> 'FWP' %> FWP <br>
+      </div>
+    <legend class="scheduler-border">GSM</legend>
+       <div class="control-group">        
+          <%= f.radio_button :category, :class=> "btn", :value=> '3G' %> 3G <br>
+          <%= f.radio_button :category, :class=> "btn", :value=> 'SIM' %> SIM <br>
+      </div>
+   </div><br>
   <div class="field">
     <%= f.label :tariff_plan_confirm %>
-    <%= f.check_box :tariff_plan_confirm %>
-  </div>
+    <%#= f.check_box :tariff_plan_confirm %>
+    <%= f.radio_button :tariff_plan_confirm, :class=> "btn", :value=> 'YES' %> YES <br>
+    <%= f.radio_button :tariff_plan_confirm, :class=> "btn", :value=> 'NO' %> NO <br>
+  </div><br>
   <div class="field">
     <%= f.label :usage_detail %>
-    <%= f.text_field :usage_detail %>
+    <%#= f.text_field :usage_detail %>
+    <%= f.radio_button :usage_detail, :class=> "btn", :value=> 'Used' %> Used <br>
+    <%= f.radio_button :usage_detail, :class=> "btn", :value=> 'Unused' %> Unused <br>
   </div>
   <div class="field">
     <%= f.label :receive_monthly_bill %>
